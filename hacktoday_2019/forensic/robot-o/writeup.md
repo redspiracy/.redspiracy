@@ -14,9 +14,9 @@
 >author: deomkicer
 
 ## Cara Penyelesaian
-to be updated.
+akan di update
 
 ## Flag
-> to be updated.
+> akan di update
 
 
