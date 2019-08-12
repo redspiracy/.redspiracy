@@ -6,11 +6,12 @@
 | -------- | ---- |
 | Forensic | 500 |
 ### Deskripsi
-> Robot-o, robot buatan Friska, masih dalam tahap pengembangan sehingga terdapat corrupt pada audio yang dikeluarkan robot-o. Bisakah kamu memperbaikinya?
-
-format flag: hacktoday{flag}
-
-author: deomkicer
+> Robot-o, robot buatan Friska, masih dalam tahap pengembangan sehingga terdapat corrupt pada audio yang dikeluarkan robot-o.
+>Bisakah kamu memperbaikinya?
+>
+>format flag: hacktoday{flag}
+>
+>author: deomkicer
 
 ## Cara Penyelesaian
 to be updated.
