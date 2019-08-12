@@ -15,13 +15,13 @@
 
 ## Cara Penyelesaian
 Diberikan sebuah file dengan ekstensi '.voice', namun ketika penulis mencoba check didalam terminal, hasilnya adalah
-> ↪ file robot-o.voice 
 > robot-o.voice: RIFF (little-endian) data, WAVE audio
 
 Hasil tersebut menunjukan bahwa file tersebut ternyata merupakan file audio dengan ekstensi '.wav' yang corrupt sesuai dengan apa yang deskripsi soal ceritakan.
 Karena sekarang kita sudah mengetahui jenis file tersebut, maka langkah selanjutnya penulis mencari cara untuk repair wav file. Tentu saja disini kita sangat memerlukan google, untuk explore lebih jauh untuk menemukan caranya.
 
 Tanpa harus menunggu lama, penulis menggunakan keyword 'repair wav file' pada google, hasil yang dibutuhkan langsung muncul,
+
 ![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/HackToday%202019/forensic/robot-o/screenshot/1.jpg)
 
 Ternyata repairing wav file dapat dilakukan dengan audio editor (disini penulis menggunakan `Adobe Audition`), hanya dengan open file raw pada audio editor, lalu pilih file wav yang rusak tersebut, dan export menjadi file wav. 
@@ -35,6 +35,7 @@ Terlihat bahwa sound wave tersebut seperti bar yang di gabung menjadi satu buah 
 Disini penulis memerlukan tools automated yang dapat mentranslasikan morse code panjang yang berdurasi 33 detik. Setelah dilakukan googling, ternyata ada website https://morsecode.scphillips.com/labs/decoder/ yang dapat mentranslate secara otomatis, penulis hanya perlu upload, play, dan menunggu proses translasi selama 33 detik.
 
 Hasil akhir,
+
 ![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/HackToday%202019/forensic/robot-o/screenshot/4.jpg)
 
 ## Flag
