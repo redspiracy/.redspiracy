@@ -28,7 +28,7 @@ Namun ketika diteliti lebih lanjut, return yang dikeluarkan program akan selalu 
 
 Pada pertama kali program dimulai, program melakukan syscall pada **‘a0120’**, setelah inputan diproses dan benar, maka akan dilanjutkan pada **‘a0220’**.dst. Karena output yang diberikan program akan selalu sama sampai inputan ke-20, maka kita dapat melakukan bruteforce dengan output program sebagai acuan true or false, dengan code berikut:
 
-`
+```
 from subprocess import Popen, PIPE
 import string
 
@@ -50,7 +50,7 @@ while x < len(charset):
         print 'Flag : hacktoday{' + flag.replace('\n', '') + '}'
         continue
     x += 1
-`
+```
 
 Dengan code tersebut kita membruteforce program dengan module subprocess untuk open binary tersebut dan string untuk membuat charset yang digunakan untuk melakukan input char per char yang diambil dari variable charset \[a-z,A-Z,0-9,\_] dan yang merupakan karakter yang printable dan biasanya terkandung dalam flag. Lalu dilakukan bruteforce dengan looping sebanyak charset dengan membandingkan angka output program sebagai acuannya, jika bertambah / lebih besar dari variable param sebelumnya, berarti char yang diinput adalah benar dan disimpan kedalam variable flag, dan update variable param sebagai acuan next brute, serta set variable x menjadi 0, agar mengulang kembali dari charset ‘a’, hingga variable x == len(charset) yang berarti bruteforce telah selesai.
 
