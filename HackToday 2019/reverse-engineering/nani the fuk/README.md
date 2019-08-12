@@ -56,7 +56,8 @@ Dengan code tersebut kita membruteforce program dengan module subprocess untuk o
 
 Kita jalan kan code berikut, dan hasilnya:
 ![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/HackToday%202019/reverse-engineering/nani%20the%20fuk/screenshot/5.jpg)
-Flag berhasil didapatkan!
+
+Flag didapatkan!
 
 ## Flag
 > hacktoday{s1g_c0ntorl_fl0w_xD_}
