@@ -34,7 +34,7 @@ Terlihat bahwa sound wave tersebut seperti bar yang di gabung menjadi satu buah 
 
 Disini penulis memerlukan tools automated yang dapat mentranslasikan morse code panjang yang berdurasi 33 detik. Setelah dilakukan googling, ternyata ada website https://morsecode.scphillips.com/labs/decoder/ yang dapat mentranslate secara otomatis, penulis hanya perlu upload, play, dan menunggu proses translasi selama 33 detik.
 
-Hasil akhir:
+Hasil akhir,
 ![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/HackToday%202019/forensic/robot-o/screenshot/4.jpg)
 
 ## Flag
