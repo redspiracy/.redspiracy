@@ -36,7 +36,7 @@ DONE:
 
 MSG:
     .ascii "cp33AI9~p78f8h1UcspOtKMQbxSKdq~^0yANxbnN)d}k&6eUNr66UK7Hsk_uFSb5#9b&PjV5_
-8phe7C#CLc#<QSr0sb6{%NC8G|ra!YJyaG_~RfV3sw_&SW~}((_1>rh0dMzi><i6)wPgxiCzJJVd8CsGkT^p
+8phe7C#CLc#<QSr0sb6\{\%NC8G|ra!YJyaG_~RfV3sw_&SW~}((_1>rh0dMzi><i6)wPgxiCzJJVd8CsGkT^p
 >_KXGxv1cIs1q(QwpnONOU9PtP35JJ5<hlsThB{uCs4knEJxGgzpI&u)1d{4<098KpXrLko{Tn{gY<
 |EjH_ez{z)j)_3t(|13Y}"
 .end START
@@ -66,7 +66,7 @@ DONE: ------------------------> Exit function
 
 MSG: -------------------------> Variable MSG yang menyimpan string.
     .ascii "cp33AI9~p78f8h1UcspOtKMQbxSKdq~^0yANxbnN)d}k&6eUNr66UK7Hsk_uFSb5#9b&PjV5_
-8phe7C#CLc#<QSr0sb6{%NC8G|ra!YJyaG_~RfV3sw_&SW~}((_1>rh0dMzi><i6)wPgxiCzJJVd8CsGkT^p
+8phe7C#CLc#<QSr0sb6\{\%NC8G|ra!YJyaG_~RfV3sw_&SW~}((_1>rh0dMzi><i6)wPgxiCzJJVd8CsGkT^p
 >_KXGxv1cIs1q(QwpnONOU9PtP35JJ5<hlsThB{uCs4knEJxGgzpI&u)1d{4<098KpXrLko{Tn{gY<
 |EjH_ez{z)j)_3t(|13Y}"
 .end START
@@ -74,7 +74,7 @@ MSG: -------------------------> Variable MSG yang menyimpan string.
 Didapatkan gambaran flow program assembly tersebut, lalu saya mencoba melakukan coding python untuk mendapatkan index flag yang terdapat dalam buffer MSG. Berikut code pertama yang dicoba,
 ```
 r1 = 'cp33AI9~p78f8h1UcspOtKMQbxSKdq~^0yANxbnN)d}k&6eUNr66UK7Hsk_uFSb5#9b&PjV5_8p
-he7C#CLc#<QSr0sb6{%NC8G|ra!YJyaG_~RfV3sw_&SW~}((_1>rh0dMzi><i6)wPgxiCzJJVd8CsGk
+he7C#CLc#<QSr0sb6\{\%NC8G|ra!YJyaG_~RfV3sw_&SW~}((_1>rh0dMzi><i6)wPgxiCzJJVd8CsGk
 T^p>_KXGxv1cIs1q(QwpnONOU9PtP35JJ5<hlsThB{uCs4knEJxGgzpI&u)1d{4<098KpXrLko{T
 n{gY<|EjH_ez{z)j)_3t(|13Y}'
 
