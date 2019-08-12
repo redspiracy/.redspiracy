@@ -17,6 +17,7 @@
 Diberikan sebuah file dengan ekstensi '.voice', namun ketika penulis mencoba check didalam terminal, hasilnya adalah
 > ↪ file robot-o.voice 
 > robot-o.voice: RIFF (little-endian) data, WAVE audio
+
 Hasil tersebut menunjukan bahwa file tersebut ternyata merupakan file audio dengan ekstensi '.wav' yang corrupt sesuai dengan apa yang deskripsi soal ceritakan.
 Karena sekarang kita sudah mengetahui jenis file tersebut, maka langkah selanjutnya penulis mencari cara untuk repair wav file. Tentu saja disini kita sangat memerlukan google, untuk explore lebih jauh untuk menemukan caranya.
 
