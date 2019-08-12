@@ -16,4 +16,4 @@
 akan di update.
 
 ## Flag
-> akan di update.
+> akan di update
