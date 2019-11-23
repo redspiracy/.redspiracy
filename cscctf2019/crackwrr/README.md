@@ -15,7 +15,21 @@ Diberikan file binary, dengan detail sebagai berikut:
 ![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/1.jpg)
 
 Selanjutnya kita dapat melakukan eksekusi binary tersebut, untuk melihat alur dan input/output yang diberikan. Berikut hasil dari binary yang dieksekusi.
-![image]()
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/8.jpg)
 
+Dari hasil tersebut dapat disimpulkan, bahwa binary setelah berjalan akan melakukan checking pada version elf tersebut. Namun, karena version yang didapatkan telah out-of-date, maka kita harus melakukan patching. Untuk melihat apa yang binary compare, kita dapat menggunakan ltrace.
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/2.jpg)
+
+Output dari ltrace ternyata tidak keluar, karena didapatkan ptrace (anti-debugger). Sehingga program tidak bisa ditrace atau didebug.
+Untuk menyelesaikan soal ini, sebenarnya terdapat banyak cara, dari mulai menggunakan gdb atau debugger lain, melakukan patching pada debugger dan dilanjutkan dengan scripting python, sampai cara langsung, yaitu dengan melakukan patch dan export menjadi elf lalu run kembali.
+
+Pada cara ini, saya menggunakan cara terakhir agar lebih mudah, tanpa harus melakukan scripting, dengan cara melakukan patching. Langkah awal, kita dapat membuka ida untuk melihat flow dari program tersebut.
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/3.jpg)
+Terlihat flow program ada yang merujuk ke print flag. Namun, sebelum sampai situ dilakukan comparing value, yang diduga yaitu version check.
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/4.jpg)
+Comparing value dilakukan pada [rbp+var_54], dengan 3419h lalu dilanjutkan dengan conditional jump (JZ) ke alamat loc_A03 jika hasilnya true.
+Namun permasalahan yang dihadapi bahwa [rbp+var_54] tidak berisi value 3419h, sehingga hasil compare selalu mengembalikan nilai false.
+Pada tahap ini, kita perlu untuk melakukan patch binary, pada alamat compare JZ, yang setelah dianalisa, alamat JZ terdapat pada 0x9F0, seperti berikut.
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/5.jpg)
 ## Flag
 > CCC{cr4ck3r_m0r3_p000w3rfull_Th4n_j0k33r}
