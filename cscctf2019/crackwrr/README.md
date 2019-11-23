@@ -34,6 +34,7 @@ Pada tahap ini, kita perlu untuk melakukan patch binary, pada alamat compare JZ,
 
 Didapat bahwa value dari JZ yaitu 74, kita perlu mengganti value dari JZ menjadi JNZ dengan value 75. Mengapa JNZ? karena kita akan membalikan return flow dari proses compare. Dari yang sebelumnya jika kondisi tersebut true maka flow akan berjalan ke kanan, menjadi jika kondisinya true flow akan berjalan ke kiri, sedangkan jika hasil compare tersebut bernilai false, maka flow akan berjalan ke kanan (dimana print flag dilakukan). Disini saya menggunakan https://hexed.it untuk melakukan patch dan mengexportnya kembali menjadi elf.
 ![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/6.jpg)
+
 Pergi ke alamat 0x9F0, lalu ganti nilai 74 (JZ) menjadi 75(JNZ), kemudian lakukan export file.
 
 Setelah export selesai, lakukan eksekusi kembali pada binary yang sudah di patch, lalu flag akan keluar.
