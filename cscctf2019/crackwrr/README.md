@@ -31,5 +31,13 @@ Comparing value dilakukan pada [rbp+var_54], dengan 3419h lalu dilanjutkan denga
 Namun permasalahan yang dihadapi bahwa [rbp+var_54] tidak berisi value 3419h, sehingga hasil compare selalu mengembalikan nilai false.
 Pada tahap ini, kita perlu untuk melakukan patch binary, pada alamat compare JZ, yang setelah dianalisa, alamat JZ terdapat pada 0x9F0, seperti berikut.
 ![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/5.jpg)
+
+Didapat bahwa value dari JZ yaitu 74, kita perlu mengganti value dari JZ menjadi JNZ dengan value 75. Mengapa JNZ? karena kita akan membalikan return flow dari proses compare. Dari yang sebelumnya jika kondisi tersebut true maka flow akan berjalan ke kanan, menjadi jika kondisinya true flow akan berjalan ke kiri, sedangkan jika hasil compare tersebut bernilai false, maka flow akan berjalan ke kanan (dimana print flag dilakukan). Disini saya menggunakan https://hexed.it untuk melakukan patch dan mengexportnya kembali menjadi elf.
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/6.jpg)
+Pergi ke alamat 0x9F0, lalu ganti nilai 74 (JZ) menjadi 75(JNZ), kemudian lakukan export file.
+
+Setelah export selesai, lakukan eksekusi kembali pada binary yang sudah di patch, lalu flag akan keluar.
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/crackwrr/Screenshot/7.jpg)
+
 ## Flag
 > CCC{cr4ck3r_m0r3_p000w3rfull_Th4n_j0k33r}
