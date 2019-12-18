@@ -13,31 +13,32 @@
 ## Cara Penyelesaian
 Diberikan sebuah binary yang dibuat menggunakan bahasa Go, atau Golang.
 
-(gambar)
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/final/legGO/Screenshot/1.jpg)
 
 Binary tersebut ketika dijalankan, akan meminta input number yang nantinya akan dilakukan pengecekan untuk key dari xor flag.
 Namun ketika binary diberikan input, program berhenti karena limit calculation, yang disebabkan oleh concurrent runtime.
 
-(gambar)
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/final/legGO/Screenshot/2.jpg)
 
 Dari hasil tersebut kita diminta untuk menganalisa maksud dari program legGO berjalan. Karena pada saat final, sourcecode telah diberikan, lebih efisien untuk kita meneliti function berdasarkan dari sourcecode dan binarynya seperti berikut.
 Pertama, kita perlu tau main address dari binary tersebut yang dapat di ketahui melalui IDA, untuk melihat urutan function yang dijalankan.
 
-(gambar)
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/final/legGO/Screenshot/3.jpg)
 
 Dari gambar tersebut kita mengetahui bahwa function yang dijalankan pertama kali adalah main_calcnum(). Selanjutnya kita perlu menganalisa apa yang ada dalam funtion tersebut.
 
-(gambar)
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/final/legGO/Screenshot/4.jpg)
 
-Function main_calcnum berisi code yang digunakan untuk menghitung key yang diulang sebanyak 8678, yang kemudian dilakukan function checking untuk angka perlooping, lalu dalam main_check() dilakukan pemanggilan funtion modulonum(). Pada funtion tersebut angka yang dilempar dari main_check() dilakukan operasi modulus dan lainnya seperti berikut:
+Function main_calcnum berisi code yang digunakan untuk menghitung key yang diulang sebanyak 8678, yang kemudian dilakukan function checking untuk angka perlooping, lalu dalam main_check() dilakukan pemanggilan funtion modulonum(). 
+Pada funtion tersebut angka yang dilempar dari main_check() dilakukan operasi modulus dan lainnya seperti berikut:
 
-(gambar)
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/final/legGO/Screenshot/6.jpg)
 
 Jika diteliti lebih lanjut, terdapat sebuah string array yang terdapat pada qword_4EDD80, yaitu berisi sebuah char:
 
-(gambar)
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/final/legGO/Screenshot/7.jpg)
 
-(gambar)
+![image](https://raw.githubusercontent.com/redspiracy/write-ups/master/cscctf2019/final/legGO/Screenshot/8.jpg)
 
 Sehingga jika di translate secara keseluruhan dan digabung dengan hint akhir akan menjadi seperti ini:
 ```
