@@ -4,9 +4,10 @@
 ## Informasi Soal
 | Kategori | Poin |
 | -------- | ---- |
-| kategori | 0 |
+| Reverse Engineering | 1000 |
 ### Deskripsi
-> Deskripsi soal disini.
+> Leggo! mari takhlukanlah dengan cepat dan efektif semaksimal mungkin. Flag disana menantimu :D
+> Author: redspiracy
 
 ## Cara Penyelesaian
 Langkah-langkah penyelesaian beserta code yang digunakan ditulis disini.
