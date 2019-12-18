@@ -1,5 +1,5 @@
-# Nama event CTF
-## _Nama soal_
+# CSCCTF 2019
+## _legGO_
 
 ## Informasi Soal
 | Kategori | Poin |
